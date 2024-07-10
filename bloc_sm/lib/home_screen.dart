@@ -1,4 +1,5 @@
 import 'package:bloc_sm/cubit/counter_cubit.dart';
+import 'package:bloc_sm/incremet_dicremt.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,28 +13,19 @@ class MyHomePage extends StatefulWidget {
 }
  
 class _MyHomePageState extends State<MyHomePage> {
-  late CounterCubit counterCubit;
 
-  @override
-  void initState() {
-    super.initState();
-    counterCubit = CounterCubit();
-  }
-
-  @override
-  void dispose() {
-    counterCubit.close();
-    super.dispose();
-  }
-
+ 
+ 
   @override
   Widget build(BuildContext context) {
+    final counterCubit = BlocProvider.of<CounterCubit>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text(widget.title),
       ),
       body: Center(
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -49,21 +41,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            onPressed: () => counterCubit.dicrement(),
-            tooltip: 'Decrement',
-            child: const Icon(Icons.remove),
+     floatingActionButton: FloatingActionButton( 
+      onPressed: ( ){
+        Navigator.of(context,).push(
+          MaterialPageRoute(
+            builder: (context) => IncremntDicremtPage(),
           ),
-          FloatingActionButton(
-            onPressed: () => counterCubit.increment(),
-            tooltip: 'Increment',
-            child: const Icon(Icons.add),
-          ),
-        ],
-      ),
+        );
+      },
+     ),
     );
   }
 }

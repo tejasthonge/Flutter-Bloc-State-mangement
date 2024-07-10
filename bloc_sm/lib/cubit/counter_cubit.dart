@@ -10,7 +10,8 @@ class CounterCubit extends Cubit<int>{
 
   void increment(){
     print(state);
-    emit(state +1); 
+    emit(state +1);   //this is protted function and we can not use out side this class
+     
     print( "after $state");
     
 
