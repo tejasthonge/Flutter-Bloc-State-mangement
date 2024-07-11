@@ -4,25 +4,27 @@ import 'package:bloc_sm/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class IncremntDicremtPage extends StatefulWidget{
+class IncremntDicremtPageCubit extends StatefulWidget{
 
 
   @override 
   State createState(){
-   return  IncremntDicremtPageState();
+   return  IncremntDicremtPageCubitState();
   }
   
 
 }
 
-class IncremntDicremtPageState extends State<IncremntDicremtPage>{
+class IncremntDicremtPageCubitState extends State<IncremntDicremtPageCubit>{
 
 
   @override 
   Widget build(BuildContext context){
     final CounterCubit counterCubit = BlocProvider.of<CounterCubit>(context);
     return Scaffold( 
-
+            body: Center( 
+        child:Text("cubit")
+      ),
 
        floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
