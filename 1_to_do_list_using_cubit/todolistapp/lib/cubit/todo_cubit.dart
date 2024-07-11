@@ -10,4 +10,6 @@ class TodoCubit extends Cubit<List<Todo>>{
   void addTodo({required Todo task}){
     emit([...state,task]);
   }
+
+  
 }
