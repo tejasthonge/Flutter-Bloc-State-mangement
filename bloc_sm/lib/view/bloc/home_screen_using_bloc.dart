@@ -20,7 +20,7 @@ class _MyHomePageBlocState extends State<MyHomePageBloc> {
  
   @override
   Widget build(BuildContext context) {
-    final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
+    // final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
@@ -32,7 +32,7 @@ class _MyHomePageBlocState extends State<MyHomePageBloc> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             BlocBuilder<CounterBloc, int>(
-              bloc: counterBloc,
+              // bloc: counterBloc,
               builder: (context, counter) {
                 return Text(
                   '$counter',

@@ -18,7 +18,7 @@ class _MyHomePageCubitState extends State<MyHomePageCubit> {
  
   @override
   Widget build(BuildContext context) {
-    final counterCubit = BlocProvider.of<CounterCubit>(context);
+    // final counterCubit = BlocProvider.of<CounterCubit>(context);  depending upon our requirmet we create this veraible 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
@@ -30,7 +30,7 @@ class _MyHomePageCubitState extends State<MyHomePageCubit> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             BlocBuilder<CounterCubit, int>(
-              bloc: counterCubit,
+              // bloc: counterCubit,  //if we not use this bloc this is optional parmetor 
               builder: (context, counter) {
                 return Text(
                   '$counter',
